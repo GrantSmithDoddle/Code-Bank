@@ -1,0 +1,19 @@
+NGNIX SERVER
+
+Subscriptions / Apache & ngnix settings:
+
+location ~* \.(txt|xml|js)$ {
+	expires 8d;
+}
+
+location ~* \.(css)$ {
+	expires 8d;
+}
+
+location ~* \.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav|mp4|m4v|ogg|webm|aac)$ {
+	expires 8d;
+}
+
+location ~* \.(jpg|jpeg|png|gif|swf|webp)$ {
+	expires 8d;
+}

@@ -1,0 +1,2 @@
+/*--- Remove dotted line from links---*/
+a:active, a:focus { outline:none; }  

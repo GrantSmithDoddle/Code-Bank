@@ -1,0 +1,47 @@
+/* RESPONISIVE FIXED MENU
+--------------------------------------------*/
+nav.nav-header.fixed {
+	width: 100%;
+	z-index: 600;
+	background: #9D162E url(/wp-content/uploads/2016/03/meadows-favicon-negative.png);
+	background-repeat: no-repeat;
+    background-position: 20px center;
+    background-size: 56px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	-webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-animation: slidedown 2s forwards;
+    animation: slidedown 2s forwards;
+	margin: 0 auto;
+}
+nav.nav-header.fixed.wrap {
+	width: 100%!important;	
+}
+nav.nav-header.fixed ul#menu-primary {
+	width: 100%;
+	text-align: right;
+}
+
+/* REQUIRES JS TO WORK
+-------------------------------------------*/
+<script>
+
+jQuery(window).bind('scroll', function() {
+
+         if (jQuery(window).scrollTop() > 100) {
+
+             jQuery('.nav-header').addClass('fixed'); /* adds class to element */
+
+         }
+
+         else {
+
+             jQuery('.nav-header').removeClass('fixed');
+
+         }
+
+    });
+</script>

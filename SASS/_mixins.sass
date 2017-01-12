@@ -1,0 +1,49 @@
+// GLOBAL MIXINS
+
+=box( $radius, $shadowColour, $grad1, $grad2 )
+  -webkit-border-radius:  $radius
+  -moz-border-radius:     $radius
+  border-radius:          $radius
+
+  -webkit-box-shadow: 0 5px 10px $shadowColour
+  -moz-box-shadow:    0 5px 10px $shadowColour
+  box-shadow:         0 5px 10px $shadowColour
+
+  background: #036
+  background: -webkit-linear-gradient($grad1, $grad2)
+  background: -o-linear-gradient($grad1, $grad2)
+  background: -moz-linear-gradient($grad1, $grad2)
+  background: linear-gradient($grad1, $grad2)
+
+=border-radius($radius)
+  -webkit-border-radius:  $radius
+  -moz-border-radius:     $radius
+  border-radius:          $radius
+
+=cascade($colour)
+  position: relative
+  &::before
+    position: absolute
+    content: ""
+    width: 100%
+    height: 100%
+    z-index: -2
+    top: 10px
+    left: -10px
+    background: darken($colour, 10%)
+
+    box-shadow: -10px 10px 0 darken($colour, 5%)
+
+// media queries
+
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+=tablet
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content
+
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
